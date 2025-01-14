@@ -1,0 +1,483 @@
+* Transferir sólo los archivos de reciente creación de un directorio a otro
+excluyendo los directorios antecedidos con --exclude 
+
+  rsync -av --exclude node_modules --exclude .git/ directorio_origen directorio_destino
+ 
+* FOLD cambiar la longitud de las lineas de un archivo a 75 caracteres
+ máximo, -w el ancho de la linea, -s dividir en los espacios para no partir
+palabras.
+
+  fold -s -w 75 archivo_original.txt > archivo_final.txt
+
+----------------------------------------------------------------------------
+
+* Excluir un archivo de dropbox
+  
+
+----------------------------------------------------------------------------
+
+ *  unrar con password
+
+  unrar x file.rar -pPASSWORD
+
+----------------------------------------------------------------------------
+
+  Uso de vi
+
+ * Cambiar caracteres globalmente
+
+	:%s/old/new/gc
+
+ * Numerar lineas en vi
+
+  :set number
+
+ * Eliminar la numeración
+
+  :set nonumber 
+
+
+----------------------------------------------------------------------------
+
+ * Crear conexion alámbrica directa a raspberry pi
+
+  $ nm-connection-editor
+
+  - Y luego en ipv4 se usa: compartida con otros equipos
+
+----------------------------------------------------------------------------
+
+ * Descargar subtitulos de youtube en formato srt
+
+  Google2SRT
+
+----------------------------------------------------------------------------
+
+ * Extraer audio de video mp4 a mp3
+
+  ffmpeg -i archivo.mp4 archivo.mp3
+
+----------------------------------------------------------------------------
+
+ * Crear subtitulos automaticamente a partir de un audio
+
+  autosub archivo.mp3 -o salida.srt -S en -D en -F srt 
+ 
+--------------------------------------------------------------------------- 
+
+ * Entrar a otra máquina y correr una aplicación basada en X
+
+  ssh -X máquina
+  
+----------------------------------------------------------------------------
+ 
+ * Security copy
+
+  - Desde una máquina remota
+
+  scp -r Usuario@Máquina.Remota:Archivo.Remoto . 
+       |	                                     |
+      ---                                     ---
+   Recursivo		                    Directorio actual	
+
+  - Hacia una máquina remota
+
+  scp -r Archivo.local Usuario@Máquina.Remota:Archivo.Remoto
+       |
+      ---
+   Recursivo
+
+----------------------------------------------------------------------------
+ 
+ * Descubrir la direccion de maquinas romatas en la red
+
+    sudo nmap -sn 192.168.1.0/24
+
+----------------------------------------------------------------------------
+
+ * Muestra si hay trabajos en la impresorai, el número de "job" 
+   y el propietario del "job"
+
+   lpq -l
+
+  borra todos los trabajos o borra un #job específico.
+   lprm -all
+   lprm #job
+
+----------------------------------------------------------------------------
+
+ * Porgramas para empaquetado y compresion TAR 
+
+  Empaqueta los archivos
+ 
+  tar -cf archivo.tar archivo1.ext archivo2.ext
+
+  Empaqueta directorios
+ 
+  tar --exclude=node_modules/ -cf archivo.tar directorio/
+
+  Extrae archivos
+ 
+  tar -xf archivo.tar
+
+  Concatena un archivo al tar
+
+  tar --append --file=node_modules.tar package.json
+
+  Para comprimir
+
+  gzip archivo.tar
+
+----------------------------------------------------------------------------
+
+ * Para comprimir un archivo.
+ 
+  gzip -c file1 > destino.gz
+  
+  descomprimir un archivo protegido con password con 7z
+
+  7z x -ppassword config.zip
+
+----------------------------------------------------------------------------
+
+ * Localizar ficheros con un texto particular en su interior.
+  -n etiquetar con el número de linea 
+  -r recursivo 
+
+  grep -nr "text to find" directorio/  
+
+ * Localizar ficheros.
+ 
+  find diretorio/ -name file_name
+ 
+ * localizar ficheros terminados en .ts en el directorio actual y
+  buscar la cadena "text.to.find" reemplazando recursivamente {} con
+  el archivo encontrando por find.
+  
+  find ./ -name "*.ts" -exec grep -n "text.to.find" {} +
+
+----------------------------------------------------------------------------
+
+ * Aspell
+
+  aspell check archivo.tex ¡Nuevo!
+  aspell -c -t -d spanish archivo.tex
+  ispell -d español -T latin1 archivo.tex
+  ispell -d español -T TeX archivo.tex
+  ispell -c -t -d spanish archivo.tex
+
+----------------------------------------------------------------------------
+ 
+ * Correr Raspbian en Qemu
+
+  - Instalar qemu arm
+
+  dnf install qemu-system-arm.x86_64 
+
+  - Descargar el kernel para arm
+
+  git clone https://github.com/dhruvvyas90/qemu-rpi-kernel
+
+  - Primera vez.
+
+  qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda 2014-01-07-wheezy-raspbian.img
+
+  - Modificamos /etc/
+  
+ gedit /etc/ld.so.preload
+
+  Colocamos un # en frente de la primera linea tal como se ve a acontinuación:
+
+    #/usr/lib/arm-linux-gnueabihf/libcofi_rpi.so
+
+  - Reseteamos
+
+  $sudo halt
+
+  - Segunda vez.
+
+  qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda 2014-01-07-wheezy-raspbian.img -monitor vc -net nic -net user,hostfwd=tcp::2222-:22,hostfwd=tcp::8080-:80
+
+  - Conectarse por ssh a la maquina virtual
+
+  xhost +
+  ssh -X -p 2222 pi@localhost
+
+  password = raspberry
+
+----------------------------------------------------------------------------
+ 
+ * Ordenar alfabéticamente un archivo
+
+  sort archivo.ext -o archivo_salida.ext
+
+----------------------------------------------------------------------------
+
+ * Montar una imagen iso
+
+  mount -o loop -t iso9660 FC3-i386-disc1.iso /media/floppy/
+
+----------------------------------------------------------------------------
+
+ * Transforma un archivo dvi a ps.
+
+   dvips archivo.dvi -o archivo.ps
+
+----------------------------------------------------------------------------
+
+ * Convierte imagenes de xfig a ps, gif, jpeg, etc...
+
+   fig2dev -L ps archivo.fig archivo.ps, gif, jpeg...
+             ---
+	            |
+	    ps, gif, jpeg... El tipo de archivo al que se desee convertir.
+
+----------------------------------------------------------------------------
+
+ * Para separar en partes un archivo y unirlo luego
+
+  split -b 1400k archivo.ext
+ 
+  para unirlos,
+  
+  cat xaa xab xac > archivo_destino.extension 
+ 
+  si son muchos archivos x,
+  
+  cat xa* > archivo_destino.extension
+ 
+  En Windows
+
+  copy/b xaa+xab+xac+xad archivo_destino.extension
+ 
+  colocando la extensin original.
+
+----------------------------------------------------------------------------
+
+ * Para separar en sus subrutinas un archivo fortran 
+
+  csplit diversi_7jun05.f /subroutine/-3 {*}
+
+----------------------------------------------------------------------------
+
+ * Bajar archivos en background
+
+ wget -b --proxy=off -t 0 -T 60 -c -r -nH --cut-dirs=4 http://site.com
+     `---´ 
+       |
+
+  Descarga en background
+
+
+ wget -b --proxy=off --passive-ftp -t 0 -T 60 -c -r -nH --cut-dirs=7 ftp://ftp.site.com/file.ext
+ 
+  * Para reeiniciar la descarga en caso de que se haya detenido
+
+ wget -c ftp://ftp.ejemplo.com/file.txt
+
+----------------------------------------------------------------------------
+
+ * Funciones matemáticas
+
+  Logaritmo en base B     LOGB(X)=LOG(X)/LOG(B)
+  Seno inverso            ARCSIN(X)=ATN(X/SQR(1-X*X))
+  Coseno inverso          ARCCOS(X)=1.570796-ARCSIN(X)
+  Seno hiperb. inverso    ARCSINH(X)=LOG(X+SQR(X*X+1))
+  Coseno hiperb. inverso  ARCCOSH(X)=LOG(X+SQR(X*X-1))
+  Tangente hiperb. inv.   ARCTANH(X)=LOG((1+X)/(1-X))/2
+  Secante hiperb. inv.    ARCSECH(X)=LOG((1+SQR(1+X*X))/X)
+  Cosecante hiperb. inv.  ARCCSCH(X)=LOG((1+SGN(X)*SQR(1+X*X))/X)
+  Cotangente hiperb. inv. ARCCOTH(X)=LOG((X+1)/(X-1))/2
+
+----------------------------------------------------------------------------
+
+  * Gnome Screeshot Keyboard Shortcuts 
+
+If you want to just take a screenshot without playing with the settings beforehand, Fedora Workstation also has several keyboard shortcuts for taking screenshots in different ways:
+
+Printscreen key – grab a screenshot of the whole desktop and save it to your Pictures folder
+
+Alt + Printscreen - Take a screenshot of the currently focused window and save it to your Pictures folder
+
+Shift + Printscreen – Select an area to grab and save it to your Pictures folder.
+
+Ctrl + Printscreen – grab a screenshot of the whole desktop and copy it to the clipboard
+
+Ctrl + Alt + Printscreen – grab a screenshot of the currently focused window and copy it to the clipboard
+
+Ctrl + Shift + Printscreen – Select an area to grab and copy it to the clipboard
+
+----------------------------------------------------------------------------
+
+  * Instalacion de PGPLOT
+
+copiar el archivo de pgplot-5.2.tgz en el siguiente directorio /usr/local/src
+cd /usr/local/src
+tar -xzvf pgplot-5.2.tgz
+cd /usr/local
+mkdir pgplot-5.2
+cd src
+su -
+
+cd /usr/local/pgplot-5.2/
+cp /usr/local/src/src/drivers.list .
+vi drivers.list
+        ! GIDRIV 1 /GIF     GIF-format file, landscape
+        GIDRIV 1 /GIF       GIF-format file, landscape
+        ! GIDRIV 2 /VGIF    GIF-format file, portrait
+        GIDRIV 2 /VGIF      GIF-format file, portrait
+        ! PSDRIV 1 /PS      PostScript printers, monochrome, landscape  Std F77
+        PSDRIV 1 /PS        PostScript printers, monochrome, landscape  Std F77
+        ! PSDRIV 2 /VPS     Postscript printers, monochrome, portrait   Std F77
+        PSDRIV 2 /VPS       Postscript printers, monochrome, portrait   Std F77
+        ! PSDRIV 3 /CPS     PostScript printers, color, landscape       Std F77
+        PSDRIV 3 /CPS       PostScript printers, color, landscape       Std F77
+        ! PSDRIV 4 /VCPS    PostScript printers, color, portrait        Std F77
+        PSDRIV 4 /VCPS      PostScript printers, color, portrait        Std F77
+        ! XWDRIV 1 /XWINDOW Workstations running X Window System        C
+        XWDRIV 1 /XWINDOW   Workstations running X Window System        C
+        ! XWDRIV 2 /XSERVE  Persistent window on X Window System        C
+        XWDRIV 2 /XSERVE    Persistent window on X Window System        C
+
+/usr/local/src/src/makemake /usr/local/src/src/ linux g77_gcc
+sh -c 'make > /tmp/make.log 2>&1'
+grep -i error /tmp/make.log
+sh -c 'make cpg > /tmp/make.log 2>&1'
+grep -i error /tmp/make.log
+make clean
+mkdir bin demos doc include lib
+mv pgxwin_server bin/
+mv pgdemo* cpgdemo demos/
+mv pgplot.doc doc/
+mv cpgplot.h include/
+mv libcpgplot.a libpgplot.a lib/
+cp /src/src/examples/pgdemo* demos
+cp /src/src/cpg/cpgdemo.c demos
+cp /src/src/cpg/cpgplot.doc doc/
+
+
+vi /usr/local/etc/profile
+        # Variables para el pgplot-5.2
+        PGPLOT_DIR="/usr/local/pgplot-5.2/"; export PGPLOT_DIR
+
+vi /usr/local/etc/csh.cshrc
+        # Variables para el pgplot-5.2
+        setenv PGPLOT_DIR /usr/local/pgplot-5.2/
+fin
+
+----------------------------------------------------------------------------
+
+ * Uso de QEMU
+
+ - Ir al terminal
+
+  Ctrl-alt-2
+
+ - Salir del terminal
+
+  Ctrl-alt-1
+
+ - Enviar ALT+CTRL+Delete a la máquina virtual QEMU
+
+  sendkey alt-ctrl-delete
+
+ - Liberar el mouse
+
+  ctrl-alt-g
+
+ - Crear un disco duro
+
+  qemu-img create -f qcow2 FILE.qcow2 40G
+
+ - Ejemplo de uso
+
+	qemu-system-x86_64 -m 2G -cpu host -enable-kvm -drive file=WinXP.qcow2,if=ide -drive file=NewVirtualDisk.qcow2,if=ide -cdrom ../_Getintopc.com_Windows_XP_Professional_SP3_Nov_2013_Incl_SATA_Drivers.iso -drive file=WinXP_4.img,index=0,if=floppy,format=raw -boot menu=on
+
+  qemu-system-x86_64 -m 2G -cpu host -enable-kvm -drive file=WINXP.qcow2,if=ide -cdrom Windows_XP_Professional.iso -boot menu=on
+
+  qemu-system-i386 -m 64M -cpu 486 -boot once=a -fda MSW311.1.IMA -hda win31_40mb.img -no-fd-bootchk
+
+----------------------------------------------------------------------------
+
+ *  descargar archivos grandes desde GoogleDrive (Programa Python)
+	
+	pip install gdown --user
+	gdown ... 
+
+----------------------------------------------------------------------------
+
+ *	Uso de nvm
+
+ *  Instalando la última versión 
+
+	nvm install --lts
+
+ *	Listar instancias instaladas
+
+	nvm ls
+
+ *	Switch to the latest LTS version:
+	
+	nvm use --lts
+
+----------------------------------------------------------------------------
+
+ * Uso de ncu para actualizar paquetería de NPM
+
+ ncu -u
+
+----------------------------------------------------------------------------
+
+* Configuración de GRUB para instalaciones duales
+
+insmod part_msdos
+insmod ntfs
+set root='hd0,msdos1'
+if [ x$feature_platform_search_hint = xy ]; then
+  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 --hint='hd0,msdos1'  1A2E89612E893733
+else
+  search --no-floppy --fs-uuid --set=root 1A2E89612E893733
+fi
+parttool ${root} hidden-
+drivemap -s (hd0) ${root}
+chainloader +1
+
+----------------------------------------------------------------------------
+
+ * Cambiar nombres de 1 2 3 a 01 02 03  en un directorio de forma recursiva y crear una lista de reprodución
+
+	- instala el creador de listas de reproducción
+
+$ pip install make_playlist
+
+	- Cambia los nombre de los archivos 1. a 01. ó de 2. a 02. y asi susecivamente.
+
+$ cd directoryOfVideos
+
+$ find . -type f -name '[1-9]*' -exec sh -c 'n=$(basename "$0"); d=$(dirname "$0"); if [[ $n =~ ^([1-9])([^0-9].*)?$ ]]; then mv "$0" "$d/0$n"; fi;' {} \;
+
+	- Crea la lista de reprodución
+
+$ make_playlist -o -f mp4 -r nombre_lista
+
+----------------------------------------------------------------------------
+ 
+ * Cambiar archivos de wma a mp3
+ 
+	for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
+
+----------------------------------------------------------------------------
+
+ * Github/Bitbucket
+
+ git clone https://github.com/hrivera2014/front.git
+
+ git remote -v
+ git remote add origin https://github.com/hrivera2014/frontend.git
+ git branch -M main
+ git push -u origin main
+ 
+ git remote -v
+ git remote add origin harivera2014@bitbucket.org:harivera2014/frontend.git
+ git push -u origin master
+  
