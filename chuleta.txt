@@ -480,4 +480,10 @@ $ make_playlist -o -f mp4 -r nombre_lista
  git remote -v
  git remote add origin harivera2014@bitbucket.org:harivera2014/frontend.git
  git push -u origin master
-  
+ 
+ * git cambiar el editor por omisión a vi
+
+git config --global core.editor vi
+
+
+
