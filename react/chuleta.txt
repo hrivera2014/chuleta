@@ -1,0 +1,49 @@
+* Con react app
+
+create-react-app 
+
+* O con npx
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+* O con vite y npm
+
+npm create vite myApp
+cd myApp
+npm install
+npm run dev
+
+* con vite y yarn
+
+yarn create vite myApp
+cd myApp
+yarn
+yarn dev
+
+* Añadiendo la libreria react router
+
+npm i react-router-dom
+
+* Ejecutar el servidor desde una dirección particular en vez de localhost
+
+npm run dev -- --host 192.168.3.132 --port 5173
+
+* Instalar tailwind
+
+npx tailwindcss-cli build --output tailwind.css
+
+* Cookies
+
+npm i js-cookie
+
+* ReactQuery
+
+npm i @tanstack/react-query
+npm i @tanstack/react-query-devtools
+npm i json-server
+
+* tarx = tar -xzvf -> Extrae
+* tare = tar -cf   -> Empaqueta
+
