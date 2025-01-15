@@ -1,0 +1,19 @@
+- Setear las variables de entorno del sistema
+
+  source emsdk_env.sh
+
+- Cambiar en makefile el compilador estandar de gcc a em++
+  
+  CXX = em++
+
+- Usando el Makefile
+
+  emmake make
+
+- transpilar de .o a .html
+
+ em++ ERROR_ON_UNDEFINED_SYMBOLS=0 gen_ft8.o -s WASM=1 -o gen_ft8.html -lm -o decode_ft8 decode_ft8.o fft/kiss_fftr.o fft/kiss_fft.o ft8/decode.o ft8/encode.o ft8/ldpc.o ft8/unpack.o ft8/text.o ft8/constants.o common/wave.o
+
+
+- 
+

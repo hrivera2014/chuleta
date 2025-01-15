@@ -1,0 +1,42 @@
+- instalar expo
+
+npm -g install expo@latest
+npx expo install --fix
+
+
+- react native puro con yarn
+
+yarn create react-native-app myApp
+cd myApp
+yarn install
+yarn start
+npm install -g sharp-cli
+
+- react-native puro con npm
+
+npx create-react-native-app --use-npm myapp
+
+- react native con expo y npm
+
+npx create-expo-app --template blank@sdk-46 myapp o 
+npx create-expo-app --template blank-typescript
+
+cd myapp
+npm install
+npm start
+
+- Ejecutar en un servidor de ip cualquiera
+
+REACT_NATIVE_PACKAGER_HOSTNAME=192.168.2.100 npx expo start
+ 
+- react native con expo y yarn
+
+npx create-expo-app --template blank@sdk-46 myapp
+cd myapp
+yarn install
+yarn start
+
+- actualizar a una version nueva de expo
+
+npx expo install --fix
+

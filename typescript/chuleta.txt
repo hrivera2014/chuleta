@@ -1,0 +1,19 @@
+Ejemplos copiados y extendidos del curso de typeScript 
+del canal Makigas de youtube.
+
+ * instalar typescript localmente
+
+  npm i --save-dev typescript 
+
+ * crear archivo tsconfig.json
+
+  node_modules/.bin/tsc --init
+  o
+  npx tsc --init
+  y descomentar rootDir="./src' y outDir="./dist"
+
+ * sistema de desarollo automatico
+
+  npm i --save-dev ts-node-dev
+
+  modificar el package.json y añadir en los scrips "dev": "ts-node-dev app"
