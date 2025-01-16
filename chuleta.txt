@@ -470,7 +470,7 @@ $ make_playlist -o -f mp4 -r nombre_lista
 
  * Github/Bitbucket
 
- git clone https://github.com/hrivera2014/front.git
+ git clone https://github.com/hrivera2014/frontend.git
 
  git remote -v
  git remote add origin https://github.com/hrivera2014/frontend.git
@@ -485,5 +485,16 @@ $ make_playlist -o -f mp4 -r nombre_lista
 
 	git config --global core.editor vi
 
+----------------------------------------------------------------------------
 
+ * Docker en MX linux
+	
+	sudo service docker status
+	sudo service docker start
+	sudo service docker stop
 
+----------------------------------------------------------------------------
+ * ip instead of ifconfig
+	
+	ip addr show wlan0/eth0
+	
