@@ -89,7 +89,7 @@ palabras.
 
 ----------------------------------------------------------------------------
  
- * Descubrir la direccion de maquinas romatas en la red
+ * Descubrir la direccion de máquinas remotas en la red
 
     sudo nmap -sn 192.168.1.0/24
 
@@ -496,5 +496,5 @@ $ make_playlist -o -f mp4 -r nombre_lista
 ----------------------------------------------------------------------------
  * ip instead of ifconfig
 	
-	ip addr show wlan0/eth0
+	sudo ip addr show wlan0/eth0
 	
