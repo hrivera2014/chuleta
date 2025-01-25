@@ -11,8 +11,11 @@ palabras.
 
 ----------------------------------------------------------------------------
 
-* Excluir un archivo de dropbox
+* Excluir un archivo de dropbox y auto inicio
   
+ dropbox exclude node_modules 
+ dropbox autostart y/n
+
 
 ----------------------------------------------------------------------------
 
