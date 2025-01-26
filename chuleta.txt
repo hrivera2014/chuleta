@@ -1,31 +1,27 @@
-* Transferir sólo los archivos de reciente creación de un directorio a otro
-excluyendo los directorios antecedidos con --exclude 
+--------------------------------------------------------------------------------
+ * Transferir sólo los archivos de reciente creación de un directorio a otro
+	 excluyendo los directorios antecedidos con --exclude 
 
   rsync -av --exclude node_modules --exclude .git/ directorio_origen directorio_destino
- 
-* FOLD cambiar la longitud de las lineas de un archivo a 75 caracteres
- máximo, -w el ancho de la linea, -s dividir en los espacios para no partir
-palabras.
+
+--------------------------------------------------------------------------------
+ * FOLD cambiar la longitud de las lineas de un archivo a 75 caracteres
+ 	 máximo, -w el ancho de la linea, -s dividir en los espacios para no partir palabras.
 
   fold -s -w 75 archivo_original.txt > archivo_final.txt
 
-----------------------------------------------------------------------------
-
-* Excluir un archivo de dropbox y auto inicio
+--------------------------------------------------------------------------------
+ * Excluir un archivo de dropbox y auto inicio
   
- dropbox exclude node_modules 
- dropbox autostart y/n
+ 	dropbox exclude node_modules 
+ 	dropbox autostart y/n
 
-
-----------------------------------------------------------------------------
-
- *  unrar con password
+--------------------------------------------------------------------------------
+ * unrar con password
 
   unrar x file.rar -pPASSWORD
 
-----------------------------------------------------------------------------
-
-  Uso de vi
+--------------------------------------------------------------------------------
 
  * Cambiar caracteres globalmente
 
@@ -39,41 +35,34 @@ palabras.
 
   :set nonumber 
 
-
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Crear conexion alámbrica directa a raspberry pi
 
   $ nm-connection-editor
 
   - Y luego en ipv4 se usa: compartida con otros equipos
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Descargar subtitulos de youtube en formato srt
 
   Google2SRT
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Extraer audio de video mp4 a mp3
 
   ffmpeg -i archivo.mp4 archivo.mp3
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Crear subtitulos automaticamente a partir de un audio
 
   autosub archivo.mp3 -o salida.srt -S en -D en -F srt 
  
---------------------------------------------------------------------------- 
-
+--------------------------------------------------------------------------------
  * Entrar a otra máquina y correr una aplicación basada en X
 
   ssh -X máquina
   
-----------------------------------------------------------------------------
- 
+--------------------------------------------------------------------------------
  * Security copy
 
   - Desde una máquina remota
@@ -90,14 +79,12 @@ palabras.
       ---
    Recursivo
 
-----------------------------------------------------------------------------
- 
+--------------------------------------------------------------------------------
  * Descubrir la direccion de máquinas remotas en la red
 
     sudo nmap -sn 192.168.1.0/24
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Muestra si hay trabajos en la impresorai, el número de "job" 
    y el propietario del "job"
 
@@ -107,8 +94,7 @@ palabras.
    lprm -all
    lprm #job
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Porgramas para empaquetado y compresion TAR 
 
   Empaqueta los archivos
@@ -131,8 +117,7 @@ palabras.
 
   gzip archivo.tar
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Para comprimir un archivo.
  
   gzip -c file1 > destino.gz
@@ -141,8 +126,7 @@ palabras.
 
   7z x -ppassword config.zip
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Localizar ficheros con un texto particular en su interior.
   -n etiquetar con el número de linea 
   -r recursivo 
@@ -159,8 +143,7 @@ palabras.
   
   find ./ -name "*.ts" -exec grep -n "text.to.find" {} +
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Aspell
 
   aspell check archivo.tex ¡Nuevo!
@@ -169,8 +152,7 @@ palabras.
   ispell -d español -T TeX archivo.tex
   ispell -c -t -d spanish archivo.tex
 
-----------------------------------------------------------------------------
- 
+--------------------------------------------------------------------------------
  * Correr Raspbian en Qemu
 
   - Instalar qemu arm
@@ -208,26 +190,22 @@ palabras.
 
   password = raspberry
 
-----------------------------------------------------------------------------
- 
+--------------------------------------------------------------------------------
  * Ordenar alfabéticamente un archivo
 
   sort archivo.ext -o archivo_salida.ext
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Montar una imagen iso
 
   mount -o loop -t iso9660 FC3-i386-disc1.iso /media/floppy/
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Transforma un archivo dvi a ps.
 
    dvips archivo.dvi -o archivo.ps
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Convierte imagenes de xfig a ps, gif, jpeg, etc...
 
    fig2dev -L ps archivo.fig archivo.ps, gif, jpeg...
@@ -235,8 +213,7 @@ palabras.
 	            |
 	    ps, gif, jpeg... El tipo de archivo al que se desee convertir.
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Para separar en partes un archivo y unirlo luego
 
   split -b 1400k archivo.ext
@@ -255,30 +232,30 @@ palabras.
  
   colocando la extensin original.
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Para separar en sus subrutinas un archivo fortran 
 
   csplit diversi_7jun05.f /subroutine/-3 {*}
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Bajar archivos en background
 
- wget -b --proxy=off -t 0 -T 60 -c -r -nH --cut-dirs=4 http://site.com
-     `---´ 
-       |
+  wget -b --proxy=off -t 0 -T 60 -c -r -nH --cut-dirs=4 http://site.com
+      `---´ 
+        |
 
   Descarga en background
 
 
  wget -b --proxy=off --passive-ftp -t 0 -T 60 -c -r -nH --cut-dirs=7 ftp://ftp.site.com/file.ext
+      																									`----------´
+																															|
+																								número de directorios a excluir
  
   * Para reeiniciar la descarga en caso de que se haya detenido
 
- wget -c ftp://ftp.ejemplo.com/file.txt
-
-----------------------------------------------------------------------------
+ 	 wget -c ftp://ftp.ejemplo.com/file.txt
+--------------------------------------------------------------------------------
 
  * Funciones matemáticas
 
@@ -292,8 +269,7 @@ palabras.
   Cosecante hiperb. inv.  ARCCSCH(X)=LOG((1+SGN(X)*SQR(1+X*X))/X)
   Cotangente hiperb. inv. ARCCOTH(X)=LOG((X+1)/(X-1))/2
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
   * Gnome Screeshot Keyboard Shortcuts 
 
 If you want to just take a screenshot without playing with the settings beforehand, Fedora Workstation also has several keyboard shortcuts for taking screenshots in different ways:
@@ -310,8 +286,7 @@ Ctrl + Alt + Printscreen – grab a screenshot of the currently focused window a
 
 Ctrl + Shift + Printscreen – Select an area to grab and copy it to the clipboard
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
   * Instalacion de PGPLOT
 
 copiar el archivo de pgplot-5.2.tgz en el siguiente directorio /usr/local/src
@@ -368,8 +343,7 @@ vi /usr/local/etc/csh.cshrc
         setenv PGPLOT_DIR /usr/local/pgplot-5.2/
 fin
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Uso de QEMU
 
  - Ir al terminal
@@ -400,15 +374,13 @@ fin
 
   qemu-system-i386 -m 64M -cpu 486 -boot once=a -fda MSW311.1.IMA -hda win31_40mb.img -no-fd-bootchk
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  *  descargar archivos grandes desde GoogleDrive (Programa Python)
 	
 	pip install gdown --user
 	gdown ... 
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  *	Uso de nvm
 
  *  Instalando la última versión 
@@ -424,79 +396,73 @@ fin
 	nvm use --lts
 
 ----------------------------------------------------------------------------
-
  * Uso de ncu para actualizar paquetería de NPM
 
  ncu -u
 
 ----------------------------------------------------------------------------
+ * Configuración de GRUB para instalaciones duales
 
-* Configuración de GRUB para instalaciones duales
-
-insmod part_msdos
-insmod ntfs
-set root='hd0,msdos1'
-if [ x$feature_platform_search_hint = xy ]; then
+  insmod part_msdos
+  insmod ntfs
+  set root='hd0,msdos1'
+  if [ x$feature_platform_search_hint = xy ]; then
   search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 --hint='hd0,msdos1'  1A2E89612E893733
-else
+  else
   search --no-floppy --fs-uuid --set=root 1A2E89612E893733
-fi
-parttool ${root} hidden-
-drivemap -s (hd0) ${root}
-chainloader +1
+  fi
+  parttool ${root} hidden-
+  drivemap -s (hd0) ${root}
+  chainloader +1
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Cambiar nombres de 1 2 3 a 01 02 03  en un directorio de forma recursiva y crear una lista de reprodución
 
 	- instala el creador de listas de reproducción
 
-$ pip install make_playlist
+   $ pip install make_playlist
 
 	- Cambia los nombre de los archivos 1. a 01. ó de 2. a 02. y asi susecivamente.
 
-$ cd directoryOfVideos
+   $ cd directoryOfVideos
 
-$ find . -type f -name '[1-9]*' -exec sh -c 'n=$(basename "$0"); d=$(dirname "$0"); if [[ $n =~ ^([1-9])([^0-9].*)?$ ]]; then mv "$0" "$d/0$n"; fi;' {} \;
+   $ find . -type f -name '[1-9]*' -exec sh -c 'n=$(basename "$0"); d=$(dirname "$0"); if [[ $n =~ ^([1-9])([^0-9].*)?$ ]]; then mv "$0" "$d/0$n"; fi;' {} \;
 
 	- Crea la lista de reprodución
 
-$ make_playlist -o -f mp4 -r nombre_lista
+   $ make_playlist -o -f mp4 -r nombre_lista
 
 ----------------------------------------------------------------------------
- 
  * Cambiar archivos de wma a mp3
  
 	for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Github/Bitbucket
 
- git clone https://github.com/hrivera2014/frontend.git
+  git clone https://github.com/hrivera2014/frontend.git
 
- git remote -v
- git remote add origin https://github.com/hrivera2014/frontend.git
- git branch -M main
- git push -u origin main
+  git remote -v
+  git remote add origin https://github.com/hrivera2014/frontend.git
+  git branch -M main
+  git push -u origin main
  
- git remote -v
- git remote add origin harivera2014@bitbucket.org:harivera2014/frontend.git
- git push -u origin master
+  git remote -v
+  git remote add origin harivera2014@bitbucket.org:harivera2014/frontend.git
+  git push -u origin master
  
  * git cambiar el editor por omisión a vi
 
 	git config --global core.editor vi
 
-----------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------
  * Docker en MX linux
 	
 	sudo service docker status
 	sudo service docker start
 	sudo service docker stop
 
-----------------------------------------------------------------------------
+--------------------------------------------------------------------------------
  * ip instead of ifconfig
 	
 	sudo ip addr show wlan0/eth0
