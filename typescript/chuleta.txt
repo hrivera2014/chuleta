@@ -1,5 +1,5 @@
 Ejemplos copiados y extendidos del curso de typeScript 
-del canal Makigas de youtube.
+del canal Makigas en youtube.
 
  * instalar typescript localmente
 
@@ -17,3 +17,4 @@ del canal Makigas de youtube.
   npm i --save-dev ts-node-dev
 
   modificar el package.json y añadir en los scrips "dev": "ts-node-dev app"
+
