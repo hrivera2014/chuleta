@@ -1,0 +1,25 @@
+#Se corre con
+#docker-compose up -d -f archivo.yml
+#Se detiene con
+#docker-compose down
+
+version: "3"
+
+services:
+  backend:
+    image: confusion
+    ports:
+      - "3000:3000"
+      - "3443:3443"
+    links: 
+      - mongo
+
+  mongo:
+    image: mongo:4.2
+    ports:
+      - "27016:27017"
+    environment:
+     - MONGO_INITDB_ROOT_USERNAME=admin
+     - MONGO_INITDB_ROOT_PASSWORD=password
+     - MONGO_INITDB_DATABASE=conFusion
+

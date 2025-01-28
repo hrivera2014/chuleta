@@ -1,0 +1,30 @@
+#Se corre con:
+#docker-compose up -d -f archivo.yml
+#Se detiene con:
+#docker-compose down
+
+version: "3"
+services:
+  confusion:
+    image: confusion
+    ports:
+      - "3000:3000"
+      - "3443:3443"
+    networks:
+      - telemarket
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.2
+    ports:
+      - "27016:27017"
+    networks:
+      - telemarket
+    #volumes:
+    #  - mongo-data:/data/db
+networks:
+  telemarket:
+    driver: bridge
+#volumes:
+#  mongo-data:
+#    driver: local
