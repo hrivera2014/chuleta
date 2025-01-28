@@ -22,7 +22,6 @@
   unrar x file.rar -pPASSWORD
 
 --------------------------------------------------------------------------------
-
  * Cambiar caracteres globalmente
 
 	:%s/old/new/gc
@@ -252,9 +251,9 @@
 																															|
 																								número de directorios a excluir
  
-  * Para reeiniciar la descarga en caso de que se haya detenido
+ * Para reeiniciar la descarga en caso de que se haya detenido
 
- 	 wget -c ftp://ftp.ejemplo.com/file.txt
+ 	wget -c ftp://ftp.ejemplo.com/file.txt
 --------------------------------------------------------------------------------
 
  * Funciones matemáticas
@@ -272,34 +271,42 @@
 --------------------------------------------------------------------------------
   * Gnome Screeshot Keyboard Shortcuts 
 
-If you want to just take a screenshot without playing with the settings beforehand, Fedora Workstation also has several keyboard shortcuts for taking screenshots in different ways:
+  If you want to just take a screenshot without playing with the settings 
+  beforehand, Fedora Workstation also has several keyboard shortcuts for taking 
+  screenshots in different ways:
 
-Printscreen key – grab a screenshot of the whole desktop and save it to your Pictures folder
+  Printscreen key – grab a screenshot of the whole desktop and save it to your 
+  Pictures folder
 
-Alt + Printscreen - Take a screenshot of the currently focused window and save it to your Pictures folder
+  Alt + Printscreen - Take a screenshot of the currently focused window and save 
+  it to your Pictures folder
 
-Shift + Printscreen – Select an area to grab and save it to your Pictures folder.
+  Shift + Printscreen – Select an area to grab and save it to your Pictures 
+  folder.
 
-Ctrl + Printscreen – grab a screenshot of the whole desktop and copy it to the clipboard
+  Ctrl + Printscreen – grab a screenshot of the whole desktop and copy it to 
+  the clipboard
 
-Ctrl + Alt + Printscreen – grab a screenshot of the currently focused window and copy it to the clipboard
+  Ctrl + Alt + Printscreen – grab a screenshot of the currently focused window 
+  and copy it to the clipboard
 
-Ctrl + Shift + Printscreen – Select an area to grab and copy it to the clipboard
+  Ctrl + Shift + Printscreen – Select an area to grab and copy it to the 
+  clipboard
 
 --------------------------------------------------------------------------------
-  * Instalacion de PGPLOT
+ * Instalacion de PGPLOT
 
-copiar el archivo de pgplot-5.2.tgz en el siguiente directorio /usr/local/src
-cd /usr/local/src
-tar -xzvf pgplot-5.2.tgz
-cd /usr/local
-mkdir pgplot-5.2
-cd src
-su -
+  copiar el archivo de pgplot-5.2.tgz en el siguiente directorio /usr/local/src
+  cd /usr/local/src
+  tar -xzvf pgplot-5.2.tgz
+  cd /usr/local
+  mkdir pgplot-5.2
+  cd src
+  su -
 
-cd /usr/local/pgplot-5.2/
-cp /usr/local/src/src/drivers.list .
-vi drivers.list
+  cd /usr/local/pgplot-5.2/
+  cp /usr/local/src/src/drivers.list .
+  vi drivers.list
         ! GIDRIV 1 /GIF     GIF-format file, landscape
         GIDRIV 1 /GIF       GIF-format file, landscape
         ! GIDRIV 2 /VGIF    GIF-format file, portrait
@@ -317,31 +324,31 @@ vi drivers.list
         ! XWDRIV 2 /XSERVE  Persistent window on X Window System        C
         XWDRIV 2 /XSERVE    Persistent window on X Window System        C
 
-/usr/local/src/src/makemake /usr/local/src/src/ linux g77_gcc
-sh -c 'make > /tmp/make.log 2>&1'
-grep -i error /tmp/make.log
-sh -c 'make cpg > /tmp/make.log 2>&1'
-grep -i error /tmp/make.log
-make clean
-mkdir bin demos doc include lib
-mv pgxwin_server bin/
-mv pgdemo* cpgdemo demos/
-mv pgplot.doc doc/
-mv cpgplot.h include/
-mv libcpgplot.a libpgplot.a lib/
-cp /src/src/examples/pgdemo* demos
-cp /src/src/cpg/cpgdemo.c demos
-cp /src/src/cpg/cpgplot.doc doc/
+  /usr/local/src/src/makemake /usr/local/src/src/ linux g77_gcc
+  sh -c 'make > /tmp/make.log 2>&1'
+  grep -i error /tmp/make.log
+  sh -c 'make cpg > /tmp/make.log 2>&1'
+  grep -i error /tmp/make.log
+  make clean
+  mkdir bin demos doc include lib
+  mv pgxwin_server bin/
+  mv pgdemo* cpgdemo demos/
+  mv pgplot.doc doc/
+  mv cpgplot.h include/
+  mv libcpgplot.a libpgplot.a lib/
+  cp /src/src/examples/pgdemo* demos
+  cp /src/src/cpg/cpgdemo.c demos
+  cp /src/src/cpg/cpgplot.doc doc/
 
 
-vi /usr/local/etc/profile
+  vi /usr/local/etc/profile
         # Variables para el pgplot-5.2
         PGPLOT_DIR="/usr/local/pgplot-5.2/"; export PGPLOT_DIR
 
-vi /usr/local/etc/csh.cshrc
+  vi /usr/local/etc/csh.cshrc
         # Variables para el pgplot-5.2
         setenv PGPLOT_DIR /usr/local/pgplot-5.2/
-fin
+  fin
 
 --------------------------------------------------------------------------------
  * Uso de QEMU
@@ -368,11 +375,15 @@ fin
 
  - Ejemplo de uso
 
-	qemu-system-x86_64 -m 2G -cpu host -enable-kvm -drive file=WinXP.qcow2,if=ide -drive file=NewVirtualDisk.qcow2,if=ide -cdrom ../_Getintopc.com_Windows_XP_Professional_SP3_Nov_2013_Incl_SATA_Drivers.iso -drive file=WinXP_4.img,index=0,if=floppy,format=raw -boot menu=on
+	qemu-system-x86_64 -m 2G -cpu host -enable-kvm -drive file=WinXP.qcow2,if=ide 
+  -drive file=NewVirtualDisk.qcow2,if=ide -cdrom ../_Getintopc.com_Windows_XP_Professional_SP3_Nov_2013_Incl_SATA_Drivers.iso 
+  -drive file=WinXP_4.img,index=0,if=floppy,format=raw -boot menu=on
 
-  qemu-system-x86_64 -m 2G -cpu host -enable-kvm -drive file=WINXP.qcow2,if=ide -cdrom Windows_XP_Professional.iso -boot menu=on
+  qemu-system-x86_64 -m 2G -cpu host -enable-kvm -drive file=WINXP.qcow2,if=ide 
+  -cdrom Windows_XP_Professional.iso -boot menu=on
 
-  qemu-system-i386 -m 64M -cpu 486 -boot once=a -fda MSW311.1.IMA -hda win31_40mb.img -no-fd-bootchk
+  qemu-system-i386 -m 64M -cpu 486 -boot once=a -fda MSW311.1.IMA 
+  -hda win31_40mb.img -no-fd-bootchk
 
 --------------------------------------------------------------------------------
  *  descargar archivos grandes desde GoogleDrive (Programa Python)
@@ -383,22 +394,22 @@ fin
 --------------------------------------------------------------------------------
  *	Uso de nvm
 
- *  Instalando la última versión 
+ -  Instalando la última versión 
 
 	nvm install --lts
 
- *	Listar instancias instaladas
+ -	Listar instancias instaladas
 
 	nvm ls
 
- *	Switch to the latest LTS version:
+ -	Switch to the latest LTS version:
 	
 	nvm use --lts
 
 ----------------------------------------------------------------------------
  * Uso de ncu para actualizar paquetería de NPM
 
- ncu -u
+  ncu -u
 
 ----------------------------------------------------------------------------
  * Configuración de GRUB para instalaciones duales
@@ -420,17 +431,17 @@ fin
 
 	- instala el creador de listas de reproducción
 
-   $ pip install make_playlist
+  $ pip install make_playlist
 
-	- Cambia los nombre de los archivos 1. a 01. ó de 2. a 02. y asi susecivamente.
+	- Cambia los nombres de los archivos 1. a 01. ó de 2. a 02. y asi susecivamente.
 
-   $ cd directoryOfVideos
+  $ cd directoryOfVideos
 
-   $ find . -type f -name '[1-9]*' -exec sh -c 'n=$(basename "$0"); d=$(dirname "$0"); if [[ $n =~ ^([1-9])([^0-9].*)?$ ]]; then mv "$0" "$d/0$n"; fi;' {} \;
+  $ find . -type f -name '[1-9]*' -exec sh -c 'n=$(basename "$0"); d=$(dirname "$0"); if [[ $n =~ ^([1-9])([^0-9].*)?$ ]]; then mv "$0" "$d/0$n"; fi;' {} \;
 
 	- Crea la lista de reprodución
 
-   $ make_playlist -o -f mp4 -r nombre_lista
+  $ make_playlist -o -f mp4 -r nombre_lista
 
 ----------------------------------------------------------------------------
  * Cambiar archivos de wma a mp3
