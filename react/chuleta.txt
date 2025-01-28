@@ -1,49 +1,59 @@
-* Con react app
+ * Con react app
 
-create-react-app 
+  create-react-app 
 
-* O con npx
+-------------------------------------------------------------------------------
+ * O con npx
 
-npx create-react-app my-app
-cd my-app
-npm start
+  npx create-react-app my-app
+  cd my-app
+  npm start
 
-* O con vite y npm
+-------------------------------------------------------------------------------
+ * O con vite y npm
 
-npm create vite myApp
-cd myApp
-npm install
-npm run dev
+  npm create vite myApp
+  cd myApp
+  npm install
+  npm run dev
 
-* con vite y yarn
+-------------------------------------------------------------------------------
+ * con vite y yarn 
 
-yarn create vite myApp
-cd myApp
-yarn
-yarn dev
+  yarn create vite myApp
+  cd myApp
+  yarn
+  yarn dev
 
-* Añadiendo la libreria react router
+-------------------------------------------------------------------------------
+ * Añadiendo la libreria react router
 
-npm i react-router-dom
+  npm i react-router-dom
 
-* Ejecutar el servidor desde una dirección particular en vez de localhost
+-------------------------------------------------------------------------------
+ * Ejecutar el servidor desde una dirección particular en vez de localhost
 
-npm run dev -- --host 192.168.3.132 --port 5173
+  npm run dev -- --host 192.168.3.132 --port 5173
 
-* Instalar tailwind
+-------------------------------------------------------------------------------
+ * Instalar tailwind
 
-npx tailwindcss-cli build --output tailwind.css
+  npx tailwindcss-cli build --output tailwind.css
 
-* Cookies
+-------------------------------------------------------------------------------
+ * Cookies
 
-npm i js-cookie
+  npm i js-cookie
 
-* ReactQuery
+-------------------------------------------------------------------------------
+ * ReactQuery
 
-npm i @tanstack/react-query
-npm i @tanstack/react-query-devtools
-npm i json-server
+  npm i @tanstack/react-query
+  npm i @tanstack/react-query-devtools
+  npm i json-server
 
-* tarx = tar -xzvf -> Extrae
-* tare = tar -cf   -> Empaqueta
+-------------------------------------------------------------------------------
+ * Alias
+  tarx = tar -xzvf -> Extrae
+  tare = tar -cf   -> Empaqueta
 
