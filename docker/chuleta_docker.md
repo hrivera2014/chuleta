@@ -5,6 +5,7 @@
 # Descargar la imagen base
 
 `docker pull alpine`
+`docker pull node:18`
 
 ## Crear una imagen a partir de una imagen base que se encuentra en el 
 ## archivo Dockerfile con directiva FROM y IMAGE-NAME es el nombre que 
