@@ -121,9 +121,13 @@
  
   gzip -c file1 > destino.gz
   
+  comprimir un archivo protegido con password con 7z
+   
+   7z a -ppassword config.zip config.js 
+
   descomprimir un archivo protegido con password con 7z
 
-  7z x -ppassword config.zip
+   7z x -ppassword config.zip
 
 --------------------------------------------------------------------------------
  * Localizar ficheros con un texto particular en su interior.
