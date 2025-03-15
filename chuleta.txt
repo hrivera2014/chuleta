@@ -1,4 +1,22 @@
 --------------------------------------------------------------------------------
+ * Docker en MX linux
+	
+	sudo service docker status
+	sudo service docker start
+	sudo service docker stop
+
+--------------------------------------------------------------------------------
+ * ip instead of ifconfig
+	
+	sudo ip addr show wlan0/eth0
+	
+--------------------------------------------------------------------------------
+ * Ajustar hora del sistema
+
+	sudo date --set "2025-03-14 21:11:00"
+	sudo hwclock --systohc
+
+--------------------------------------------------------------------------------
  * Transferir sólo los archivos de reciente creación de un directorio a otro
 	 excluyendo los directorios antecedidos con --exclude 
 
@@ -471,19 +489,8 @@
   git remote add origin harivera2014@bitbucket.org:harivera2014/frontend.git
   git push -u origin master
  
+--------------------------------------------------------------------------------
  * git cambiar el editor por omisión a vi
 
 	git config --global core.editor vi
 
---------------------------------------------------------------------------------
- * Docker en MX linux
-	
-	sudo service docker status
-	sudo service docker start
-	sudo service docker stop
-
---------------------------------------------------------------------------------
- * ip instead of ifconfig
-	
-	sudo ip addr show wlan0/eth0
-	
