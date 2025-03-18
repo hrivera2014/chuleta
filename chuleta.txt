@@ -1,4 +1,9 @@
 --------------------------------------------------------------------------------
+ * copiar un archivo al portapapeles
+
+		xclip file.ext
+
+--------------------------------------------------------------------------------
  * Docker en MX linux
 	
 	sudo service docker status
@@ -100,11 +105,6 @@
  * Descubrir la direccion de máquinas remotas en la red
 
     sudo nmap -sn 192.168.1.0/24
-
---------------------------------------------------------------------------------
- * copiar un archivo al portapapeles
-
-		xclip file.ext
 
 --------------------------------------------------------------------------------
  * Muestra si hay trabajos en la impresorai, el número de "job" 
