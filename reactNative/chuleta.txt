@@ -1,6 +1,7 @@
  - instalar expo
 
   npm -g install expo@latest
+  actualizar a una version nueva de expo
   npx expo install --fix
 
 -------------------------------------------------------------------------------
@@ -39,9 +40,4 @@
   cd myapp
   yarn install
   yarn start
-
-------------------------------------------------------------------------------- 
- - actualizar a una version nueva de expo
-
-  npx expo install --fix
 
