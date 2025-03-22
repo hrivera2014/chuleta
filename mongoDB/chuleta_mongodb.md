@@ -1,3 +1,7 @@
+# Data folder
+
+mongod --dbpath=data
+
 # Mostrar las bases de datos existentes
 
 show dbs
