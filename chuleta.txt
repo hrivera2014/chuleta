@@ -22,10 +22,13 @@
 	sudo hwclock --systohc
 
 --------------------------------------------------------------------------------
- * Transferir sólo los archivos de reciente creación de un directorio a otro
-	 excluyendo los directorios antecedidos con --exclude 
+ * Transferir sólo los archivos de reciente creación o modificados de un 
+	directorio a otro excluyendo los directorios antecedidos con --exclude 
 
   rsync -av --exclude node_modules --exclude .git/ directorio_origen directorio_destino
+  - hacia una máquina remota.
+	rsync -avz -e ssh  --exclude node_modules --exclude .git/ directorio_origen/ 
+	usuario@ip_maquina_remota:directorio_remoto_destino/
 
 --------------------------------------------------------------------------------
  * FOLD cambiar la longitud de las lineas de un archivo a 75 caracteres
