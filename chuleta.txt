@@ -481,15 +481,15 @@
 --------------------------------------------------------------------------------
  * Github/Bitbucket
 
-  git clone https://github.com/hrivera2014/frontend.git
+  git clone https://github.com/uruario/frontend.git
 
   git remote -v
-  git remote add origin https://github.com/hrivera2014/frontend.git
+  git remote add origin https://github.com/usuario/frontend.git
   git branch -M main
   git push -u origin main
  
   git remote -v
-  git remote add origin harivera2014@bitbucket.org:harivera2014/frontend.git
+  git remote add origin usuario@bitbucket.org:usuario/example.git
   git push -u origin master
  
 --------------------------------------------------------------------------------
