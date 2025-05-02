@@ -34,4 +34,6 @@ db.collectionName.drop()
 
 db.dropDatabase()
 
+# ejecutar mongodb en un ip definido y con .mongo/data como directorio de registro.
 
+mongod --dbpath=.mongo/data/ --bind_ip 192.168.1.129
