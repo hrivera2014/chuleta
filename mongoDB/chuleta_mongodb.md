@@ -1,39 +1,38 @@
-# Data folder
-
-mongod --dbpath=data
-
-# Mostrar las bases de datos existentes
+# show data bases in existence at the server
 
 show dbs
 
-# Usar una base de datos particular
+# Use some data base with name dataBaseName
 
 use dataBaseName
 
-# Mostrar las colecciones de una base de datos
+# show collections in a data base
 
 show collections
 
-# Ver los records de la colección 
+# Show the records in a collection 
 
 db.collectionName.find.pretty()
 
-# Insertar un record en una colección 
+# Insert a record in a collection 
 
 db.collectionName.insertOne({"name":"Arepa3000", "description":"Pura música"})
 
-# Borrar u record con un key:value dado en
+# Delete a record with a given key:value
 
 db.collectionName.deleteOne({key:"value"})
 
-# Borrar una colección
+# Delete a collection with a collection name 
 
 db.collectionName.drop()
 
-# Borrar una base de datos
+# Delete a data base
 
 db.dropDatabase()
 
-# ejecutar mongodb en un ip definido y con .mongo/data como directorio de registro.
+# Run mongodb in a given IP and with .mongo/data as regiters directory.
 
 mongod --dbpath=.mongo/data/ --bind_ip 192.168.1.129
+mongod --dbpath=/directorio/file --bind_ip 192.168.23.16
+ip_bind is a param for to give a IP to the mongo server
+
