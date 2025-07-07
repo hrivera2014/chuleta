@@ -1,4 +1,13 @@
 --------------------------------------------------------------------------------
+ * Night Light emulation
+
+		xrandr --output DISPLAY_NAME --gamma 1.0:0.8:0.4
+		redshift -O 5000
+
+		redshift -x to reset
+		xrandr to show DISPLAY_NAME
+
+--------------------------------------------------------------------------------
  * copiar un archivo al portapapeles
 
 		xclip file.ext
@@ -48,7 +57,7 @@
   unrar x file.rar -pPASSWORD
 
 --------------------------------------------------------------------------------
- * Cambiar cadenas de caracteres recursivamente
+ * Cambiar cadenas de caracteres recursivamente en vi
 
 	:%s/old/new/gc
 
