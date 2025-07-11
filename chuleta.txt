@@ -1,16 +1,18 @@
 --------------------------------------------------------------------------------
  * Night Light emulation
 
-		xrandr --output DISPLAY_NAME --gamma 1.0:0.8:0.4
-		redshift -O 5000
+	xrandr --output DISPLAY_NAME --gamma 0.6:0.6:0.4
+	redshift -O 4000
 
-		redshift -x to reset
-		xrandr to show DISPLAY_NAME
+	xrandr to show DISPLAY_NAME
+	redshift -x to reset
+		
+	best is redshift -O 4000 without xrandr and diming the bright to half.
 
 --------------------------------------------------------------------------------
  * copiar un archivo al portapapeles
 
-		xclip file.ext
+	xclip file.ext
 
 --------------------------------------------------------------------------------
  * Docker en MX linux
