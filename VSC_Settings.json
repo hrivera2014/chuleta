@@ -1,0 +1,16 @@
+{
+	"terminal.integrated.rendererType": "dom",
+
+	"workbench.colorCustomizations": { 
+		"tab.activeBackground":"#5967d1",
+		"tab.inactiveBackground":"#252733",
+		"tab.activeForeground":"#FFFFFF",
+		"tab.inactiveForeground":"#d6d6d6",
+		"tab.border":"#1E1E1E",
+		"tab.activeBorderBottom": "#ff0000",
+		"editor.background":"#080808",
+		//"editor.tokenColorCustomizations":{"textMateRules":[{"scope":"keyword.language.html","settings":{"fontStyle":"bold"}}]}
+	},
+	"editor.fontSize": 16,
+	"editor.tabSize": 2
+}
